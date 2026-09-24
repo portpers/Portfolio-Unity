@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración de Opciones de Galería - Portfolio Unity</title>
+    <link rel="stylesheet" href="CSS/portpers.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <style>
+        /* =========================================================
+           ESTILOS DEMO DE GALERÍA: OPCIÓN A vs OPCIÓN B
+           ========================================================= */
+
+        .section-header-demo {
+            background-color: #0f2b48;
+            color: #00e5ff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ---------------------------------------------------------
+           OPCIÓN A: Tarjetas Elevadas Interactivas (Fondo Claro)
+           --------------------------------------------------------- */
+        .card-opcion-a {
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-opcion-a:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(44, 129, 194, 0.22);
+            border-color: rgba(44, 129, 194, 0.4);
+        }
+
+        .card-opcion-a .img-wrapper {
+            width: 100%;
+            height: 220px;
+            background-color: #f4f6f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 12px;
+        }
+
+        .card-opcion-a .img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .card-opcion-a:hover .img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .card-opcion-a .card-body-demo {
+            padding: 18px 20px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+        }
+
+        .card-opcion-a .titulo-proyecto {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1a2530;
+            margin: 0;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* ---------------------------------------------------------
+           OPCIÓN B: Tarjetas Oscuras Glassmorphism (Fondo Oscuro)
+           --------------------------------------------------------- */
+        .card-opcion-b {
+            background: rgba(15, 43, 72, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 14px;
+            border: 1.5px solid rgba(0, 229, 255, 0.25);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-opcion-b:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+            box-shadow: 0 12px 30px rgba(0, 229, 255, 0.35);
+        }
+
+        .card-opcion-b .img-wrapper {
+            width: 100%;
+            height: 220px;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 12px;
+        }
+
+        .card-opcion-b .img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .card-opcion-b:hover .img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .card-opcion-b .card-body-demo {
+            padding: 18px 20px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+        }
+
+        .card-opcion-b .titulo-proyecto {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+            text-align: center;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body class="containerFondo1 py-4">
+
+    <!-- CABECERA DE COMPARATIVA -->
+    <div class="container colorCabecera mb-4 rounded-3 text-center py-4">
+        <h1 class="text-white fw-bold h2">Comparativa de Opciones para la Galería</h1>
+        <p class="text-white-50 mb-0">Esta página sirve para visualizar y comparar los dos estilos sin modificar index.html</p>
+    </div>
+
+    <div class="container colorCuerpo py-5 px-4 mb-5 rounded-3">
+
+        <!-- =========================================================
+             SECCIÓN 1: OPCIÓN A (Tarjetas Elevadas en Fondo Claro)
+             ========================================================= -->
+        <div class="section-header-demo d-flex align-items-center justify-content-between">
+            <h2 class="h4 mb-0 fw-bold">OPCIÓN A: Tarjetas Elevadas Interactivas (Limpio y Elegante)</h2>
+            <span class="badge bg-info text-dark font-monospace fs-6">Sin badges ni descripciones extra</span>
+        </div>
+
+        <div class="row g-4 justify-content-center mb-5">
+            <!-- Fila 1 -->
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-a">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/Arcade2.png" alt="Multiverso Arcade 2D">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">Multiverso Arcade 2D</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-a">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/Reproductor1.png" alt="Reproductor de Música">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">Reproductor de Música (Versiones de Escritorio y móviles)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-a">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/Nivel3D.png" alt="Nivel 3D">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">Nivel 3D</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila 2 -->
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-a">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/Juego3D-1.png" alt="Juego 3D">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">Juego 3D</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-a">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/Fortaleza1.png" alt="Fortaleza Assault 3D">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">Fortaleza Assault 3D (Dispositivos Móviles)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-a">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/MenuApp.png" alt="App Exposición Temporal">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">App de Exposición Temporal (Proyecto de Fin de Grado)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- =========================================================
+             SECCIÓN 2: OPCIÓN B (Tarjetas Oscuras Glassmorphism)
+             ========================================================= -->
+        <div class="section-header-demo d-flex align-items-center justify-content-between mt-5">
+            <h2 class="h4 mb-0 fw-bold">OPCIÓN B: Tarjetas Oscuras Glassmorphism (Estilo Tech / Gaming)</h2>
+            <span class="badge bg-secondary font-monospace fs-6">Estilo Oscuro</span>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Fila 1 -->
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-b">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/Arcade2.png" alt="Multiverso Arcade 2D">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">Multiverso Arcade 2D</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-b">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/Reproductor1.png" alt="Reproductor de Música">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">Reproductor de Música (Versiones de Escritorio y móviles)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-b">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/Nivel3D.png" alt="Nivel 3D">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">Nivel 3D</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila 2 -->
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-b">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/Juego3D-1.png" alt="Juego 3D">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">Juego 3D</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-b">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/Fortaleza1.png" alt="Fortaleza Assault 3D">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">Fortaleza Assault 3D (Dispositivos Móviles)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card-opcion-b">
+                    <div class="img-wrapper">
+                        <img src="Imagenes/MenuApp.png" alt="App Exposición Temporal">
+                    </div>
+                    <div class="card-body-demo">
+                        <p class="titulo-proyecto">App de Exposición Temporal (Proyecto de Fin de Grado)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
